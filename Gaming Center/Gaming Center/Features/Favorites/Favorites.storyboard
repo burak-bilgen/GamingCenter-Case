@@ -16,9 +16,136 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghR-1a-M2A">
+                                <rect key="frame" x="0.0" y="59" width="393" height="291"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cPB-Zw-f6G">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="291"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="detailShadow" translatesAutoresizingMaskIntoConstraints="NO" id="Yc4-iV-oJZ">
+                                        <rect key="frame" x="0.0" y="99" width="393" height="192"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="192" id="tWZ-Cr-CS7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ya9-AL-jVH">
+                                        <rect key="frame" x="16" y="232" width="361" height="43"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="291" id="08E-vf-FID"/>
+                                    <constraint firstAttribute="bottom" secondItem="cPB-Zw-f6G" secondAttribute="bottom" id="8uF-EO-8Wt"/>
+                                    <constraint firstAttribute="bottom" secondItem="ya9-AL-jVH" secondAttribute="bottom" constant="16" id="Cu1-Oc-lKQ"/>
+                                    <constraint firstItem="cPB-Zw-f6G" firstAttribute="top" secondItem="ghR-1a-M2A" secondAttribute="top" id="XEk-Tw-XbQ"/>
+                                    <constraint firstItem="Yc4-iV-oJZ" firstAttribute="leading" secondItem="ghR-1a-M2A" secondAttribute="leading" id="bha-WY-kAW"/>
+                                    <constraint firstAttribute="trailing" secondItem="cPB-Zw-f6G" secondAttribute="trailing" id="h2e-Ab-jUQ"/>
+                                    <constraint firstItem="cPB-Zw-f6G" firstAttribute="leading" secondItem="ghR-1a-M2A" secondAttribute="leading" id="k0x-N1-sNL"/>
+                                    <constraint firstAttribute="trailing" secondItem="ya9-AL-jVH" secondAttribute="trailing" constant="16" id="lxE-oA-Zty"/>
+                                    <constraint firstAttribute="trailing" secondItem="Yc4-iV-oJZ" secondAttribute="trailing" id="rRR-MW-a9h"/>
+                                    <constraint firstItem="ya9-AL-jVH" firstAttribute="leading" secondItem="ghR-1a-M2A" secondAttribute="leading" constant="16" id="txZ-vg-imk"/>
+                                    <constraint firstAttribute="bottom" secondItem="Yc4-iV-oJZ" secondAttribute="bottom" id="zml-Bv-nzt"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eUP-Ra-bJo">
+                                <rect key="frame" x="16" y="366" width="361" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="NxH-9w-vKX"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyR-tQ-cBz">
+                                <rect key="frame" x="16" y="396" width="361" height="80"/>
+                                <attributedString key="attributedText">
+                                    <fragment>
+                                        <string key="content">Rockstar Games went bigger, since their previous installment of the series. You get the complicated and realistic world-building from Liberty City of GTA4 in the setting of lively and diverse Los Santos, from an old fan favorite GTA San Andreas. 561 different vehicles (including every transport you can operate)....</string>
+                                        <attributes>
+                                            <font key="NSFont" metaFont="system" size="10"/>
+                                            <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" minimumLineHeight="20" maximumLineHeight="20" tighteningFactorForTruncation="0.0"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWS-HQ-CYL">
+                                <rect key="frame" x="0.0" y="496" width="393" height="111"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="N25-vU-E2d">
+                                        <rect key="frame" x="0.0" y="1" width="393" height="109"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CKX-Ob-VHU">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="54"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="tintColor" red="0.19137066599999999" green="0.19137066599999999" blue="0.19137066599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Visit reddit"/>
+                                                <connections>
+                                                    <action selector="visitReddit:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="jhl-uN-Ery"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4C-fH-eBK">
+                                                <rect key="frame" x="0.0" y="55" width="393" height="54"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="tintColor" red="0.19137066599999999" green="0.19137066599999999" blue="0.19137066599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                <state key="normal" title="Visit website"/>
+                                                <connections>
+                                                    <action selector="visitWebsite:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Neo-ym-y5Q"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.85223323110000004" green="0.85223323110000004" blue="0.85223323110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="111" id="3Kn-RA-AcQ"/>
+                                    <constraint firstItem="N25-vU-E2d" firstAttribute="top" secondItem="aWS-HQ-CYL" secondAttribute="top" constant="1" id="8aS-cv-tt1"/>
+                                    <constraint firstAttribute="trailing" secondItem="N25-vU-E2d" secondAttribute="trailing" id="Ksg-TS-imD"/>
+                                    <constraint firstItem="N25-vU-E2d" firstAttribute="leading" secondItem="aWS-HQ-CYL" secondAttribute="leading" id="Pkq-9i-yab"/>
+                                    <constraint firstAttribute="bottom" secondItem="N25-vU-E2d" secondAttribute="bottom" constant="1" id="vde-mv-ucH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DyR-tQ-cBz" firstAttribute="top" secondItem="eUP-Ra-bJo" secondAttribute="bottom" constant="8" id="0Ck-e2-HkQ"/>
+                            <constraint firstItem="aWS-HQ-CYL" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="4sk-mb-BAY"/>
+                            <constraint firstItem="ghR-1a-M2A" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5vB-K6-9yN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="DyR-tQ-cBz" secondAttribute="trailing" constant="16" id="DL4-HF-kG8"/>
+                            <constraint firstItem="DyR-tQ-cBz" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="GOn-XP-Kwu"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eUP-Ra-bJo" secondAttribute="trailing" constant="16" id="OL4-FY-U5f"/>
+                            <constraint firstItem="aWS-HQ-CYL" firstAttribute="top" secondItem="DyR-tQ-cBz" secondAttribute="bottom" constant="20" id="SaN-VB-hfW"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="aWS-HQ-CYL" secondAttribute="trailing" id="WLw-5N-9QY"/>
+                            <constraint firstItem="ghR-1a-M2A" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="ZqL-Sc-V1x"/>
+                            <constraint firstItem="eUP-Ra-bJo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="uVW-Xq-onL"/>
+                            <constraint firstItem="eUP-Ra-bJo" firstAttribute="top" secondItem="ghR-1a-M2A" secondAttribute="bottom" constant="16" id="vzK-XI-zID"/>
+                            <constraint firstItem="ghR-1a-M2A" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="y4a-yP-gEX"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gameButtonBaseView" destination="aWS-HQ-CYL" id="NbG-KG-EHe"/>
+                        <outlet property="gameButtonStackView" destination="N25-vU-E2d" id="ajp-Sg-Ana"/>
+                        <outlet property="gameDescriptionTitleLabel" destination="eUP-Ra-bJo" id="vFz-lU-la0"/>
+                        <outlet property="gameDescriptionValueLabel" destination="DyR-tQ-cBz" id="C5T-Sr-q2C"/>
+                        <outlet property="gameImageBaseView" destination="ghR-1a-M2A" id="OSR-S3-qdz"/>
+                        <outlet property="gameImageShadowView" destination="Yc4-iV-oJZ" id="jbW-9Y-i5G"/>
+                        <outlet property="gameImageView" destination="cPB-Zw-f6G" id="ref-q4-1pG"/>
+                        <outlet property="gameTitleLabel" destination="ya9-AL-jVH" id="Ziu-dC-7Is"/>
+                        <outlet property="gameVisitRedditButton" destination="CKX-Ob-VHU" id="WYV-T2-J5N"/>
+                        <outlet property="gameVisitWebsiteButton" destination="x4C-fH-eBK" id="elM-Kn-F1z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -26,6 +153,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="detailShadow" width="375" height="192"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
