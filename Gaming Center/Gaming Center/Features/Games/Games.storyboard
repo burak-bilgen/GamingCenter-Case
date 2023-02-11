@@ -16,11 +16,33 @@
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="center" placeholder="Search for the games" translatesAutoresizingMaskIntoConstraints="NO" id="b2O-mq-RCt">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="b2O-mq-RCt" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="K7T-8s-LLt"/>
+                            <constraint firstItem="b2O-mq-RCt" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="aCR-zi-HBs"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="b2O-mq-RCt" secondAttribute="trailing" id="zWu-Lg-YxL"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="teg-Fs-3iu" id="xdJ-ow-C50"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="teg-Fs-3iu">
+                    <connections>
+                        <outlet property="delegate" destination="Y6W-OH-hqX" id="NJ6-VZ-hcY"/>
+                        <outlet property="searchContentsController" destination="Y6W-OH-hqX" id="6zo-st-h9D"/>
+                        <outlet property="searchResultsDataSource" destination="Y6W-OH-hqX" id="6Ke-Fg-1En"/>
+                        <outlet property="searchResultsDelegate" destination="Y6W-OH-hqX" id="7Sa-er-vo4"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="132" y="-27"/>
         </scene>
