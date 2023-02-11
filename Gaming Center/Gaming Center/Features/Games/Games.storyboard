@@ -21,12 +21,21 @@
                                 <rect key="frame" x="0.0" y="59" width="393" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No game has been searched." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN4-ga-dWa">
+                                <rect key="frame" x="70" y="151" width="253" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HN4-ga-dWa" secondAttribute="trailing" constant="70" id="0Z6-Y9-fAy"/>
                             <constraint firstItem="b2O-mq-RCt" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="K7T-8s-LLt"/>
+                            <constraint firstItem="HN4-ga-dWa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="70" id="LJB-2n-OyM"/>
                             <constraint firstItem="b2O-mq-RCt" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leading" id="aCR-zi-HBs"/>
+                            <constraint firstItem="HN4-ga-dWa" firstAttribute="top" secondItem="b2O-mq-RCt" secondAttribute="bottom" constant="36" id="mrJ-zI-xIL"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="b2O-mq-RCt" secondAttribute="trailing" id="zWu-Lg-YxL"/>
                         </constraints>
                     </view>
