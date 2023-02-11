@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func createGamesNavigationController(preferLargeTitle: Bool = false) -> UINavigationController {
-        let gamesVC = GamesVC()
+        let gamesVC = UIStoryboard(name: "Games", bundle: nil).instantiateViewController(withIdentifier: "GamesViewController") as! GamesVC
         
         let sectionTitle = Headlines.games
         
@@ -39,8 +39,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func createFavoritesNavigationController(preferLargeTitle: Bool = false) -> UINavigationController {
-        let favoritesVC = FavoritesVC()
-        
+        let favoritesVC = UIStoryboard(name: "Favorites", bundle: nil).instantiateViewController(withIdentifier: "FavoritesViewController") as! FavoritesVC
+
         let sectionTitle = Headlines.favorites
         
         favoritesVC.title = sectionTitle

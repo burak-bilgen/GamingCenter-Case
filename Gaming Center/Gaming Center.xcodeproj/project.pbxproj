@@ -14,6 +14,10 @@
 		8D149E4A2997CAEB002A49A9 /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E492997CAEB002A49A9 /* FavoritesVC.swift */; };
 		8D149E502997CBF8002A49A9 /* Icons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E4F2997CBF8002A49A9 /* Icons.swift */; };
 		8D149E522997CCC0002A49A9 /* Headlines.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E512997CCC0002A49A9 /* Headlines.swift */; };
+		8D149E552997D123002A49A9 /* Games.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D149E542997D123002A49A9 /* Games.storyboard */; };
+		8D149E572997D246002A49A9 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D149E562997D246002A49A9 /* Favorites.storyboard */; };
+		8D149E5A2997D30A002A49A9 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E592997D30A002A49A9 /* DetailVC.swift */; };
+		8D149E5C2997D319002A49A9 /* Detail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8D149E5B2997D319002A49A9 /* Detail.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		8D149E492997CAEB002A49A9 /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		8D149E4F2997CBF8002A49A9 /* Icons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icons.swift; sourceTree = "<group>"; };
 		8D149E512997CCC0002A49A9 /* Headlines.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Headlines.swift; sourceTree = "<group>"; };
+		8D149E542997D123002A49A9 /* Games.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Games.storyboard; sourceTree = "<group>"; };
+		8D149E562997D246002A49A9 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
+		8D149E592997D30A002A49A9 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
+		8D149E5B2997D319002A49A9 /* Detail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Detail.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +66,9 @@
 		8D149E2D2997C488002A49A9 /* Gaming Center */ = {
 			isa = PBXGroup;
 			children = (
-				8D149E2E2997C488002A49A9 /* AppDelegate.swift */,
+				8D149E532997D040002A49A9 /* App */,
+				8D149E4C2997CBDF002A49A9 /* Util */,
 				8D149E442997CABB002A49A9 /* Features */,
-				8D149E372997C488002A49A9 /* Assets.xcassets */,
-				8D149E392997C488002A49A9 /* LaunchScreen.storyboard */,
-				8D149E3C2997C488002A49A9 /* Info.plist */,
 			);
 			path = "Gaming Center";
 			sourceTree = "<group>";
@@ -70,9 +76,9 @@
 		8D149E442997CABB002A49A9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				8D149E4C2997CBDF002A49A9 /* Util */,
 				8D149E452997CAC1002A49A9 /* Games */,
 				8D149E462997CAC6002A49A9 /* Favorites */,
+				8D149E582997D2F5002A49A9 /* Detail */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -80,6 +86,7 @@
 		8D149E452997CAC1002A49A9 /* Games */ = {
 			isa = PBXGroup;
 			children = (
+				8D149E542997D123002A49A9 /* Games.storyboard */,
 				8D149E472997CAE2002A49A9 /* GamesVC.swift */,
 			);
 			path = Games;
@@ -88,6 +95,7 @@
 		8D149E462997CAC6002A49A9 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
+				8D149E562997D246002A49A9 /* Favorites.storyboard */,
 				8D149E492997CAEB002A49A9 /* FavoritesVC.swift */,
 			);
 			path = Favorites;
@@ -100,6 +108,26 @@
 				8D149E512997CCC0002A49A9 /* Headlines.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		8D149E532997D040002A49A9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				8D149E3C2997C488002A49A9 /* Info.plist */,
+				8D149E372997C488002A49A9 /* Assets.xcassets */,
+				8D149E2E2997C488002A49A9 /* AppDelegate.swift */,
+				8D149E392997C488002A49A9 /* LaunchScreen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		8D149E582997D2F5002A49A9 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				8D149E5B2997D319002A49A9 /* Detail.storyboard */,
+				8D149E592997D30A002A49A9 /* DetailVC.swift */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +188,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8D149E552997D123002A49A9 /* Games.storyboard in Resources */,
 				8D149E3B2997C488002A49A9 /* LaunchScreen.storyboard in Resources */,
+				8D149E572997D246002A49A9 /* Favorites.storyboard in Resources */,
+				8D149E5C2997D319002A49A9 /* Detail.storyboard in Resources */,
 				8D149E382997C488002A49A9 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,6 +208,7 @@
 				8D149E502997CBF8002A49A9 /* Icons.swift in Sources */,
 				8D149E2F2997C488002A49A9 /* AppDelegate.swift in Sources */,
 				8D149E522997CCC0002A49A9 /* Headlines.swift in Sources */,
+				8D149E5A2997D30A002A49A9 /* DetailVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,7 +349,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4AGNF4M662;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Gaming Center/Info.plist";
+				INFOPLIST_FILE = "Gaming Center/App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Gaming Center";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -351,7 +383,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 4AGNF4M662;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Gaming Center/Info.plist";
+				INFOPLIST_FILE = "Gaming Center/App/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Gaming Center";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
