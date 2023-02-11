@@ -53,8 +53,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return navigationController
     }
     
-    private func createTabBarController(tintColor: UIColor = .systemBlue) -> UITabBarController? {
-        let tabBarController = UITabBarController()
+    private func createTabBarController(tintColor: UIColor = .systemBlue) -> CustomTabBarController? {
+        let tabBarController = CustomTabBarController()
         
         UITabBar.appearance().tintColor = tintColor
         

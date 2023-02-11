@@ -23,6 +23,7 @@
 		8D149E672997E043002A49A9 /* GameListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E662997E043002A49A9 /* GameListCell.swift */; };
 		8D149E692997E38C002A49A9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E682997E38C002A49A9 /* String+Extensions.swift */; };
 		8D149E6B2997E3D2002A49A9 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E6A2997E3D2002A49A9 /* UIImage+Extensions.swift */; };
+		8DABC6DF2997F6C700C93658 /* TabBar+Anim.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABC6DE2997F6C700C93658 /* TabBar+Anim.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		8D149E662997E043002A49A9 /* GameListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListCell.swift; sourceTree = "<group>"; };
 		8D149E682997E38C002A49A9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		8D149E6A2997E3D2002A49A9 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		8DABC6DE2997F6C700C93658 /* TabBar+Anim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TabBar+Anim.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +157,7 @@
 		8D149E6C2997E3F2002A49A9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8DABC6DE2997F6C700C93658 /* TabBar+Anim.swift */,
 				8D149E682997E38C002A49A9 /* String+Extensions.swift */,
 				8D149E6A2997E3D2002A49A9 /* UIImage+Extensions.swift */,
 			);
@@ -243,6 +246,7 @@
 				8D149E632997DCC8002A49A9 /* GameListVC.swift in Sources */,
 				8D149E2F2997C488002A49A9 /* AppDelegate.swift in Sources */,
 				8D149E6B2997E3D2002A49A9 /* UIImage+Extensions.swift in Sources */,
+				8DABC6DF2997F6C700C93658 /* TabBar+Anim.swift in Sources */,
 				8D149E522997CCC0002A49A9 /* Headlines.swift in Sources */,
 				8D149E5A2997D30A002A49A9 /* DetailVC.swift in Sources */,
 			);
