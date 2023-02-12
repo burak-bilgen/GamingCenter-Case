@@ -12,4 +12,11 @@ enum Headlines {
     static let favorites = "Favorites"
     
     static let metacritic = "metacritic:"
+    
+    static let caution = "Caution"
+    
+    static let favorited = "Favorited"
+    static let notFavorited = "Favorite"
+    
+    static let favouriteGames = "FavouriteGames"
 }

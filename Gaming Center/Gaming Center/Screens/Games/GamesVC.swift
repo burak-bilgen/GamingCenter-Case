@@ -115,7 +115,12 @@ extension GamesVC: TableView {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectRowAt(index: indexPath.row)
+        guard let detailView = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailVC else { return }
+        
+        guard let selectedID = viewModel.gameList?[indexPath.row].id else { return }
+        detailView.viewModel.id = selectedID
+        
+        navigationController?.show(detailView, sender: nil)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

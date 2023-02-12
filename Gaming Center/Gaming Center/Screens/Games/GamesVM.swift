@@ -21,7 +21,6 @@ protocol GamesViewModelInterface: AnyObject {
     
     func dataForRow(at: Int) -> GameItemProtocol?
     func numberOfRows() -> Int
-    func didSelectRowAt(index: Int)
 }
 
 final class GamesViewModel {
@@ -58,10 +57,6 @@ extension GamesViewModel: GamesViewModelInterface {
         return count
     }
     
-    func didSelectRowAt(index: Int) {
-        
-    }
-    
     func viewDidLoad() {
         view?.configure()
         fetchGameList()
@@ -76,7 +71,7 @@ extension GamesViewModel: GamesViewModelInterface {
             self.isFetchingData = false
 
             if let error {
-                self.view?.showAlert(title: "Caution", message: error)
+                self.view?.showAlert(title: Headlines.caution, message: error)
             } else {
                 guard let data, let result = data.results, result.count > 0 else {
                     self.view?.showEmptyView()
@@ -98,7 +93,7 @@ extension GamesViewModel: GamesViewModelInterface {
             self.isFetchingData = false
 
             if let error {
-                self.view?.showAlert(title: "Caution", message: error)
+                self.view?.showAlert(title: Headlines.caution, message: error)
             } else {
                 guard let data, let result = data.results, result.count > 0 else {
                     self.view?.showEmptyView()

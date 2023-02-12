@@ -8,6 +8,7 @@
 import Foundation
 
 class NetworkHelper {
+    static let docs_url = "https://api.rawg.io/docs/"
     static let base_url = "https://api.rawg.io/api/games"
     static let api_key = "2bf5a36d9c4c44a981bc00d95d60a445"
 }
