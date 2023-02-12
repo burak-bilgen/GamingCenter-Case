@@ -41,6 +41,7 @@ class GameListCell: UITableViewCell {
         Headlines.metacritic.put(to: gameScoreTitleLabel)
         
         if let imgURL = URL(string: data.imageData) {
+            gameImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
             gameImageView.sd_setImage(with: imgURL)
         }
     }

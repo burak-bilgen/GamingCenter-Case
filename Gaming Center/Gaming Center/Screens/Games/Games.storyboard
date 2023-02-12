@@ -17,66 +17,107 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No game has been searched." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN4-ga-dWa">
-                                <rect key="frame" x="50" y="151" width="293" height="21.666666666666657"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LZs-Os-wbY">
-                                <rect key="frame" x="0.0" y="115" width="393" height="703"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" bouncesZoom="NO" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="LZs-Os-wbY">
+                                <rect key="frame" x="0.0" y="111" width="393" height="707"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <connections>
                                     <outlet property="dataSource" destination="Y6W-OH-hqX" id="JkP-xP-HpW"/>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="efK-oJ-0Pl"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="WMe-Yi-W47">
-                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No game has been searched." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HN4-ga-dWa">
+                                <rect key="frame" x="50" y="147" width="293" height="21.666666666666657"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Rj-Mg-Ayu">
+                                <rect key="frame" x="0.0" y="59" width="393" height="52"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="trailing" contentVerticalAlignment="center" placeholder="Search for the games" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="Xqp-PX-nQ7" customClass="CustomUITextField" customModule="Gaming_Center" customModuleProvider="target">
+                                        <rect key="frame" x="16" y="6" width="361" height="40"/>
+                                        <color key="backgroundColor" red="0.92156862745098034" green="0.9216470122" blue="0.92519903179999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" red="0.58747571710000002" green="0.58765447140000004" blue="0.5915538669" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="search" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="image" keyPath="leftImage" value="searchICO"/>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="leftPadding">
+                                                <real key="value" value="13"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="gapPadding">
+                                                <real key="value" value="8"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Xqp-PX-nQ7" firstAttribute="top" secondItem="1Rj-Mg-Ayu" secondAttribute="top" constant="6" id="GMS-2K-chi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Xqp-PX-nQ7" secondAttribute="trailing" constant="16" id="Lpw-ue-Z3Q"/>
+                                    <constraint firstAttribute="bottom" secondItem="Xqp-PX-nQ7" secondAttribute="bottom" constant="6" id="cTJ-hg-XH0"/>
+                                    <constraint firstAttribute="height" constant="52" id="lII-dM-8aS"/>
+                                    <constraint firstItem="Xqp-PX-nQ7" firstAttribute="leading" secondItem="1Rj-Mg-Ayu" secondAttribute="leading" constant="16" id="q4c-HI-Mbw"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" clipsSubviews="YES" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="26h-rD-Vlu">
+                                <rect key="frame" x="298" y="698" width="70" height="70"/>
+                                <color key="backgroundColor" systemColor="linkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="aK2-fL-apL"/>
+                                    <constraint firstAttribute="height" constant="70" id="unT-8N-sy8"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="scrollICO">
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="black"/>
+                                </state>
                                 <connections>
-                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="UAH-82-avO"/>
+                                    <action selector="scrollToTop:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="9Ui-tJ-aKI"/>
                                 </connections>
-                            </searchBar>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HN4-ga-dWa" secondAttribute="trailing" constant="50" id="0Z6-Y9-fAy"/>
-                            <constraint firstItem="HN4-ga-dWa" firstAttribute="top" secondItem="WMe-Yi-W47" secondAttribute="bottom" constant="36" id="0z3-IR-f70"/>
+                            <constraint firstItem="1Rj-Mg-Ayu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="2wb-km-BxI"/>
                             <constraint firstItem="LZs-Os-wbY" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="67x-nm-sXq"/>
-                            <constraint firstItem="WMe-Yi-W47" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Axi-WL-vSL"/>
-                            <constraint firstItem="LZs-Os-wbY" firstAttribute="top" secondItem="WMe-Yi-W47" secondAttribute="bottom" id="BSY-2m-Flt"/>
+                            <constraint firstItem="1Rj-Mg-Ayu" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="9rq-Gz-BmA"/>
+                            <constraint firstItem="LZs-Os-wbY" firstAttribute="top" secondItem="1Rj-Mg-Ayu" secondAttribute="bottom" id="BJn-xa-f6M"/>
                             <constraint firstItem="HN4-ga-dWa" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="LJB-2n-OyM"/>
-                            <constraint firstItem="WMe-Yi-W47" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="QH3-9F-X4l"/>
-                            <constraint firstItem="WMe-Yi-W47" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="eSZ-ve-4KD"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="26h-rD-Vlu" secondAttribute="trailing" constant="25" id="V5O-6V-lzX"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="26h-rD-Vlu" secondAttribute="bottom" constant="50" id="bw5-60-Utc"/>
                             <constraint firstItem="LZs-Os-wbY" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="jkh-ef-CBQ"/>
+                            <constraint firstItem="HN4-ga-dWa" firstAttribute="top" secondItem="1Rj-Mg-Ayu" secondAttribute="bottom" constant="36" id="pSO-qJ-UyQ"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="LZs-Os-wbY" secondAttribute="bottom" id="tsD-N1-SeS"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="1Rj-Mg-Ayu" secondAttribute="trailing" id="x8A-Rq-JPJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="emptyDataLabel" destination="HN4-ga-dWa" id="18c-Lo-pXo"/>
-                        <outlet property="searchBar" destination="WMe-Yi-W47" id="Y7v-lS-iGM"/>
-                        <outlet property="searchDisplayController" destination="Ism-T9-uD4" id="GHn-4A-z1I"/>
+                        <outlet property="scrollButton" destination="26h-rD-Vlu" id="tGA-8z-MxE"/>
+                        <outlet property="searchField" destination="Xqp-PX-nQ7" id="rHF-O6-h7t"/>
+                        <outlet property="searchFieldView" destination="1Rj-Mg-Ayu" id="lNW-Iz-d2l"/>
                         <outlet property="tableView" destination="LZs-Os-wbY" id="o4i-3U-imQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <searchDisplayController id="teg-Fs-3iu"/>
-                <searchDisplayController id="Ism-T9-uD4">
-                    <connections>
-                        <outlet property="delegate" destination="Y6W-OH-hqX" id="7zj-aZ-DOL"/>
-                        <outlet property="searchBar" destination="WMe-Yi-W47" id="eLD-Cx-gBs"/>
-                        <outlet property="searchContentsController" destination="Y6W-OH-hqX" id="cK9-JK-gCW"/>
-                        <outlet property="searchResultsDataSource" destination="Y6W-OH-hqX" id="PLr-lP-I3j"/>
-                        <outlet property="searchResultsDelegate" destination="Y6W-OH-hqX" id="OS0-Ft-aSe"/>
-                    </connections>
-                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Xqp-PX-nQ7">
+            <size key="intrinsicContentSize" width="163" height="22"/>
+        </designable>
+    </designables>
     <resources>
+        <image name="scrollICO" width="22.207000732421875" height="27.670900344848633"/>
+        <image name="searchICO" width="13.5" height="13.5"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

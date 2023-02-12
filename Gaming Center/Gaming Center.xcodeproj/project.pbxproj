@@ -20,6 +20,7 @@
 		8D149E692997E38C002A49A9 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E682997E38C002A49A9 /* String+Extensions.swift */; };
 		8D149E6B2997E3D2002A49A9 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D149E6A2997E3D2002A49A9 /* UIImage+Extensions.swift */; };
 		8D335202299959A900E450FF /* GameListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8D335201299959A900E450FF /* GameListCell.xib */; };
+		8D3352042999639800E450FF /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D3352032999639800E450FF /* UITextField+Extensions.swift */; };
 		8D496A4229993CA80099C43C /* FavoritesVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A4129993CA80099C43C /* FavoritesVC.swift */; };
 		8D496A4429993E1C0099C43C /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A4329993E1C0099C43C /* Typealias.swift */; };
 		8D496A472999460F0099C43C /* GameListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D496A452999460F0099C43C /* GameListCell.swift */; };
@@ -56,6 +57,7 @@
 		8D149E682997E38C002A49A9 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		8D149E6A2997E3D2002A49A9 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		8D335201299959A900E450FF /* GameListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GameListCell.xib; sourceTree = "<group>"; };
+		8D3352032999639800E450FF /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		8D496A4129993CA80099C43C /* FavoritesVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesVC.swift; sourceTree = "<group>"; };
 		8D496A4329993E1C0099C43C /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 		8D496A452999460F0099C43C /* GameListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListCell.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				8DABC6DE2997F6C700C93658 /* TabBar+Anim.swift */,
 				8D149E682997E38C002A49A9 /* String+Extensions.swift */,
 				8D149E6A2997E3D2002A49A9 /* UIImage+Extensions.swift */,
+				8D3352032999639800E450FF /* UITextField+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -320,6 +323,7 @@
 				8DABC6F62998F7A200C93658 /* GameListManager.swift in Sources */,
 				8D149E482997CAE2002A49A9 /* GamesVC.swift in Sources */,
 				8DABC6FD2999332B00C93658 /* AlertView.swift in Sources */,
+				8D3352042999639800E450FF /* UITextField+Extensions.swift in Sources */,
 				8DABC6E92998D14E00C93658 /* NetworkConfig.swift in Sources */,
 				8D149E502997CBF8002A49A9 /* Icons.swift in Sources */,
 				8DABC6EB2998E7F700C93658 /* GameModel.swift in Sources */,

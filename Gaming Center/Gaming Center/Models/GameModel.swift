@@ -23,7 +23,7 @@ struct Game: Codable, GameItemProtocol {
     }
     
     var scoreText: String {
-        guard let metacritic else { return String() }
+        guard let metacritic else { return "Unknown" }
         return String(describing: metacritic)
     }
     

@@ -8,7 +8,7 @@
 import Foundation
 
 class GameListManager {
-    static func fetchGameList(with searchText: String?, page: Int = 1, pageSize: Int = 10, completionHandler: @escaping ((GameList?, String?) -> Void)) {
+    static func fetchGameList(with searchText: String?, page: Int, pageSize: Int = 10, completionHandler: @escaping ((GameList?, String?) -> Void)) {
         
         var query = String()
 

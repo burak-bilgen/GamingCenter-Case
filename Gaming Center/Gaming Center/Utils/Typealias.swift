@@ -8,3 +8,4 @@
 import UIKit
 
 typealias TableView = UITableViewDelegate & UITableViewDataSource
+typealias TextField = UITextFieldDelegate
