@@ -10,4 +10,6 @@ import Foundation
 enum Headlines {
     static let games = "Games"
     static let favorites = "Favorites"
+    
+    static let metacritic = "metacritic:"
 }

@@ -2,10 +2,18 @@
 //  GameListCell.swift
 //  Gaming Center
 //
-//  Created by Burak Bilgen on 11.02.2023.
+//  Created by Burak Bilgen on 12.02.2023.
 //
 
 import UIKit
+import SDWebImage
+
+protocol GameItemProtocol {
+    var titleText: String { get }
+    var imageData: String { get }
+    var scoreText: String { get }
+    var genreText: String { get }
+}
 
 class GameListCell: UITableViewCell {
 
@@ -23,15 +31,17 @@ class GameListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-    
-    func configureCell(with data: String?) {
-        guard let data else { return }
+
+    func configure(with data: GameItemProtocol) {
+        data.titleText.put(to: gameTitleLabel)
+        data.genreText.put(to: gameGenreValueLabel)
         
-//        data.image.put(to: gameImageView)
+        data.scoreText.put(to: gameScoreValueLabel)
         
-        data.put(to: gameTitleLabel)
-        data.put(to: gameScoreTitleLabel)
-        data.put(to: gameScoreValueLabel)
-        data.put(to: gameGenreValueLabel)
+        Headlines.metacritic.put(to: gameScoreTitleLabel)
+        
+        if let imgURL = URL(string: data.imageData) {
+            gameImageView.sd_setImage(with: imgURL)
+        }
     }
 }
