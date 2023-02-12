@@ -29,4 +29,5 @@ enum Query: String {
     case pageSize = "&page_size="
     case key = "&key="
     case utm = "?utm_source="
+    case slash = "/"
 }

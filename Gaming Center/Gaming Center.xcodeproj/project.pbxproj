@@ -31,7 +31,8 @@
 		8DABC6EF2998E96A00C93658 /* GenreModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABC6EE2998E96A00C93658 /* GenreModel.swift */; };
 		8DABC6F12998EB5500C93658 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABC6F02998EB5500C93658 /* NetworkService.swift */; };
 		8DABC6F32998F19A00C93658 /* DetailedGameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABC6F22998F19A00C93658 /* DetailedGameModel.swift */; };
-		8DABC6F62998F7A200C93658 /* GameDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABC6F52998F7A200C93658 /* GameDataManager.swift */; };
+		8DABC6F62998F7A200C93658 /* GameListManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABC6F52998F7A200C93658 /* GameListManager.swift */; };
+		8DABC6F929991EC500C93658 /* GameDetailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DABC6F829991EC500C93658 /* GameDetailManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,7 +62,8 @@
 		8DABC6EE2998E96A00C93658 /* GenreModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreModel.swift; sourceTree = "<group>"; };
 		8DABC6F02998EB5500C93658 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		8DABC6F22998F19A00C93658 /* DetailedGameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedGameModel.swift; sourceTree = "<group>"; };
-		8DABC6F52998F7A200C93658 /* GameDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDataManager.swift; sourceTree = "<group>"; };
+		8DABC6F52998F7A200C93658 /* GameListManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameListManager.swift; sourceTree = "<group>"; };
+		8DABC6F829991EC500C93658 /* GameDetailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameDetailManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,7 +98,7 @@
 			children = (
 				8D149E532997D040002A49A9 /* Resources */,
 				8D149E6C2997E3F2002A49A9 /* Extensions */,
-				8D149E4C2997CBDF002A49A9 /* Util */,
+				8D149E4C2997CBDF002A49A9 /* Utils */,
 				8DABC6E02998C57C00C93658 /* Models */,
 				8DABC6E32998C6E600C93658 /* Network */,
 				8D149E442997CABB002A49A9 /* Screens */,
@@ -133,13 +135,13 @@
 			path = Favorites;
 			sourceTree = "<group>";
 		};
-		8D149E4C2997CBDF002A49A9 /* Util */ = {
+		8D149E4C2997CBDF002A49A9 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
 				8D149E4F2997CBF8002A49A9 /* Icons.swift */,
 				8D149E512997CCC0002A49A9 /* Headlines.swift */,
 			);
-			path = Util;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		8D149E532997D040002A49A9 /* Resources */ = {
@@ -199,9 +201,18 @@
 				8DABC6E12998C6A900C93658 /* NetworkHelper.swift */,
 				8DABC6E82998D14E00C93658 /* NetworkConfig.swift */,
 				8DABC6F02998EB5500C93658 /* NetworkService.swift */,
-				8DABC6F52998F7A200C93658 /* GameDataManager.swift */,
+				8DABC6F729991D7C00C93658 /* Managers */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		8DABC6F729991D7C00C93658 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				8DABC6F52998F7A200C93658 /* GameListManager.swift */,
+				8DABC6F829991EC500C93658 /* GameDetailManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -278,7 +289,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DABC6F62998F7A200C93658 /* GameDataManager.swift in Sources */,
+				8DABC6F62998F7A200C93658 /* GameListManager.swift in Sources */,
 				8D149E4A2997CAEB002A49A9 /* FavoritesVC.swift in Sources */,
 				8D149E482997CAE2002A49A9 /* GamesVC.swift in Sources */,
 				8DABC6E92998D14E00C93658 /* NetworkConfig.swift in Sources */,
@@ -286,6 +297,7 @@
 				8D149E672997E043002A49A9 /* GameListCell.swift in Sources */,
 				8DABC6EB2998E7F700C93658 /* GameModel.swift in Sources */,
 				8DABC6E22998C6A900C93658 /* NetworkHelper.swift in Sources */,
+				8DABC6F929991EC500C93658 /* GameDetailManager.swift in Sources */,
 				8DABC6ED2998E94300C93658 /* GameListModel.swift in Sources */,
 				8D149E692997E38C002A49A9 /* String+Extensions.swift in Sources */,
 				8D149E632997DCC8002A49A9 /* GameListVC.swift in Sources */,
