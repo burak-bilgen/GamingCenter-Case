@@ -8,20 +8,20 @@
 import Foundation
 
 enum UrlConfig: String {
-    case DEV = "utm_source=GamingCenter_dev"
-    case PROD = "utm_source=GamingCenter_prod"
+    case DEV = "GamingCenter_dev"
+    case PROD = "GamingCenter_prod"
 }
 
 class NetworkConfig {
     static let shared: NetworkConfig = NetworkConfig()
     
-    var baseUrl: String?
+    var utm: String?
     
     func setupNetworkConfig() {
         #if DEV
-        baseUrl = UrlConfig.DEV.rawValue
+        utm = UrlConfig.DEV.rawValue
         #elseif PROD
-        baseUrl = UrlConfig.PROD.rawValue
+        utm = UrlConfig.PROD.rawValue
         #endif
     }
 }

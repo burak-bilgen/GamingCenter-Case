@@ -8,5 +8,5 @@
 import Foundation
 
 struct Genre: Codable {
-    var name: String
+    let name: String?
 }

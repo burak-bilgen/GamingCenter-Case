@@ -8,5 +8,5 @@
 import Foundation
 
 struct GameList: Codable {
-    var results: [Game]
+    let results: [Game]?
 }

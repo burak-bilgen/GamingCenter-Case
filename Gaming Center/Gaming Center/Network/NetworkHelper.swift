@@ -22,3 +22,11 @@ enum HTTPMethod: String {
     case get = "GET"
     case post = "POST"
 }
+
+enum Query: String {
+    case search = "?search="
+    case page = "?page="
+    case pageSize = "&page_size="
+    case key = "&key="
+    case utm = "?utm_source="
+}

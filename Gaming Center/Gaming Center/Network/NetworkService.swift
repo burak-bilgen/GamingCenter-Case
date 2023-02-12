@@ -10,8 +10,17 @@ import Foundation
 class NetworkService {
     static func request<T: Codable>(type: T.Type, address: String, method: HTTPMethod, completionHandler: @escaping ((Result<T, NetworkError>) -> Void)) {
         let session = URLSession.shared
+        
+        var finalAddress = address
+        
+        if let utm = NetworkConfig.shared.utm { finalAddress.append(Query.utm.rawValue + utm) }
+        
+        finalAddress.append(Query.key.rawValue + NetworkHelper.api_key)
+        
+        guard let finalAddress = finalAddress.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else { return }
+        print(finalAddress)
 
-        guard let url = URL(string: address) else { return completionHandler(.failure(.invalidURL)) }
+        guard let url = URL(string: finalAddress) else { return completionHandler(.failure(.invalidURL)) }
         
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
