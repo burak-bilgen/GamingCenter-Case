@@ -1,5 +1,5 @@
 //
-//  GameModel.swift
+//  DetailedGameModel.swift
 //  Gaming Center
 //
 //  Created by Burak Bilgen on 12.02.2023.
@@ -7,10 +7,11 @@
 
 import Foundation
 
-struct Game: Codable {
+struct DetailedGame: Codable {
     let id: Int
     let name: String
-    let metacritic: Int
+    let description: String
     let background_image: String
-    let genres: [Genre]
+    let website: String
+    let reddit_url: String
 }

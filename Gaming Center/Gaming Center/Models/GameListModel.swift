@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct GameList {
+struct GameList: Codable {
     var results: [Game]
 }
