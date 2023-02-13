@@ -15,6 +15,8 @@ enum UrlConfig: String {
 class NetworkConfig {
     static let shared: NetworkConfig = NetworkConfig()
     
+    private init() { }
+    
     var utm: String?
     
     func setupNetworkConfig() {
