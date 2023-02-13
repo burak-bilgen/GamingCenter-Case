@@ -108,13 +108,19 @@
                                     <constraint firstAttribute="trailing" secondItem="hIt-FK-yO0" secondAttribute="trailing" id="lCq-Iy-Puf"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="qoB-mF-O7f">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="KIP-vY-kw3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="mAP-4O-VLQ" firstAttribute="leading" secondItem="KIP-vY-kw3" secondAttribute="leading" constant="16" id="Gb9-KE-lvy"/>
                             <constraint firstItem="sTN-rz-RfI" firstAttribute="top" secondItem="mAP-4O-VLQ" secondAttribute="bottom" constant="8" id="I4F-6H-uqD"/>
+                            <constraint firstItem="qoB-mF-O7f" firstAttribute="top" secondItem="jJM-H7-d4L" secondAttribute="top" id="JD5-Ga-6hg"/>
                             <constraint firstItem="sTN-rz-RfI" firstAttribute="leading" secondItem="KIP-vY-kw3" secondAttribute="leading" constant="16" id="JX1-E0-WhF"/>
+                            <constraint firstItem="qoB-mF-O7f" firstAttribute="bottom" secondItem="jJM-H7-d4L" secondAttribute="bottom" id="KGN-dG-sxW"/>
                             <constraint firstItem="KIP-vY-kw3" firstAttribute="trailing" secondItem="sTN-rz-RfI" secondAttribute="trailing" constant="16" id="LtO-dq-lJE"/>
                             <constraint firstItem="KIP-vY-kw3" firstAttribute="trailing" secondItem="gJQ-mL-RyU" secondAttribute="trailing" id="UpD-Oh-7Ni"/>
                             <constraint firstItem="c6g-nC-J7H" firstAttribute="top" secondItem="KIP-vY-kw3" secondAttribute="top" id="X1l-Rg-MSO"/>
@@ -123,10 +129,13 @@
                             <constraint firstItem="mAP-4O-VLQ" firstAttribute="top" secondItem="c6g-nC-J7H" secondAttribute="bottom" constant="16" id="pXk-MM-AmQ"/>
                             <constraint firstItem="gJQ-mL-RyU" firstAttribute="top" secondItem="sTN-rz-RfI" secondAttribute="bottom" constant="20" id="qtb-4g-XKP"/>
                             <constraint firstItem="c6g-nC-J7H" firstAttribute="leading" secondItem="KIP-vY-kw3" secondAttribute="leading" id="r7v-vY-jlZ"/>
+                            <constraint firstItem="qoB-mF-O7f" firstAttribute="leading" secondItem="KIP-vY-kw3" secondAttribute="leading" id="uXL-vb-adR"/>
+                            <constraint firstItem="qoB-mF-O7f" firstAttribute="trailing" secondItem="KIP-vY-kw3" secondAttribute="trailing" id="wId-Gq-teL"/>
                             <constraint firstItem="c6g-nC-J7H" firstAttribute="trailing" secondItem="KIP-vY-kw3" secondAttribute="trailing" id="y9t-FS-W5e"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="qoB-mF-O7f" id="t8D-XS-rET"/>
                         <outlet property="gameButtonBaseView" destination="gJQ-mL-RyU" id="bsa-06-WrO"/>
                         <outlet property="gameButtonStackView" destination="hIt-FK-yO0" id="hss-9n-gku"/>
                         <outlet property="gameDescriptionTitleLabel" destination="mAP-4O-VLQ" id="pcv-5l-LAm"/>
@@ -141,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZUs-5X-0PE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="132" y="-34"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>

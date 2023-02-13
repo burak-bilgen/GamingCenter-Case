@@ -26,6 +26,7 @@ final class GameDetailViewModel {
     weak var view: GameDetailViewInterface?
     
     var id: Int = 0
+    var cellData: Game?
     var game: DetailedGame?
         
     var redditURL: URL?
@@ -39,63 +40,71 @@ final class GameDetailViewModel {
 }
 
 extension GameDetailViewModel: GameDetailViewModelInterface {
-    func favoriteTapped() {
-        if let favouriteStatus = UserDefaults.standard.object(forKey: Headlines.favouriteGames) as? [Int] {
-            var tempArray = favouriteStatus
-            
-            if tempArray.contains(id) {
-                removeFromFavourites(tempArray)
-            } else {
-                tempArray.append(id)
-                saveFavourites(tempArray)
+    private func getStoredItems() -> [Game] {
+        let storedItems = UserDefaults.standard.object(forKey: UserDefaultsKey.favorites)
+
+        if let data = storedItems as? Data {
+            if let decodedStoredItems = try? JSONDecoder().decode([Game].self, from: data) {
+                return decodedStoredItems
             }
-        } else {
-            var tempArray = [Int]()
-            tempArray.append(id)
-            saveFavourites(tempArray)
         }
         
-        setFavouriteStatus()
+        return [Game]()
+    }
+    
+    private func doesItContain(item: Game, container: [Game]?) -> Bool {
+        if let container {
+            return container.contains(where: { $0.id == item.id })
+        } else {
+            return false
+        }
+    }
+    
+    func favoriteTapped() {
+        guard let cellData else { return }
+        
+        var items = getStoredItems()
+        
+        if doesItContain(item: cellData, container: items) {
+            removeFromFavourites(item: cellData, container: items)
+        } else {
+            items.append(cellData)
+            saveFavourites(container: items)
+        }
+        
+        isFavourite = doesItContain(item: cellData, container: getStoredItems())
         view?.configure()
     }
     
-    private func saveFavourites(_ array: [Int]?) {
-        if let array {
-            UserDefaults.standard.set(array, forKey: Headlines.favouriteGames)
+    private func saveFavourites(container: [Game]?) {
+        if let container {
+            let encodedStoredItems = try? JSONEncoder().encode(container)
+            UserDefaults.standard.set(encodedStoredItems, forKey: UserDefaultsKey.favorites)
         }
     }
     
-    private func removeFromFavourites(_ array: [Int]?) {
-        if var cacheArray = array {
-            cacheArray = cacheArray.filter {
-                $0 != id
-            }
-            
-            saveFavourites(cacheArray)
-        }
+    private func removeFromFavourites(item: Game, container: [Game]?) {
+        let editedContainer = container?.filter { $0.id != item.id }
+        saveFavourites(container: editedContainer)
     }
     
     func getBarButtonTitle() -> String {
-        isFavourite ? Headlines.favorited : Headlines.notFavorited
+        isFavourite ? Collection.favorited : Collection.notFavorited
     }
-    
-    func setFavouriteStatus() {
-        guard let favouriteStatus = UserDefaults.standard.object(forKey: Headlines.favouriteGames) as? [Int] else { return }
 
-        isFavourite = favouriteStatus.contains(id)
-    }
-    
     func viewDidLoad() {
         fetchGameDetail()
     }
     
     func fetchGameDetail() {
         GameDetailManager.fetchGameDetail(with: id) { [weak self] game, error in
-            guard let self, let game else { return }
+            guard let self, let game, let cellData = self.cellData else { return }
             
             if let error {
                 self.view?.showAlert(title: Headlines.caution, message: error)
             } else {
+                self.game = game
+                
                 if let name = game.name,
                     let description = game.description_raw,
                     let image = game.background_image,
@@ -117,8 +126,7 @@ extension GameDetailViewModel: GameDetailViewModelInterface {
                     self.view?.isRedditAvailable(false)
                 }
                 
-                self.setFavouriteStatus()
-                
+                self.isFavourite = self.doesItContain(item: cellData, container: self.getStoredItems())
                 self.view?.configure()
             }
         }

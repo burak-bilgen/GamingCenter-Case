@@ -59,6 +59,7 @@ extension GamesViewModel: GamesViewModelInterface {
     
     func viewDidLoad() {
         view?.configure()
+        
         fetchGameList()
     }
     

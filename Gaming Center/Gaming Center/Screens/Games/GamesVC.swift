@@ -115,9 +115,10 @@ extension GamesVC: TableView {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        guard let detailView = UIStoryboard(name: "Detail", bundle: nil).instantiateViewController(withIdentifier: "DetailViewController") as? DetailVC else { return }
+        guard let detailView = UIStoryboard(name: Headlines.detail, bundle: nil).instantiateViewController(withIdentifier: ViewController.detailVC) as? DetailVC else { return }
         
-        guard let selectedID = viewModel.gameList?[indexPath.row].id else { return }
+        guard let game = viewModel.gameList?[indexPath.row], let selectedID = game.id else { return }
+        detailView.viewModel.cellData = game
         detailView.viewModel.id = selectedID
         
         navigationController?.show(detailView, sender: nil)

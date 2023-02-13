@@ -13,9 +13,7 @@ protocol GameDetailViewInterface: AnyObject {
     
     func isWebsiteAvailable(_ state: Bool)
     func isRedditAvailable(_ state: Bool)
-    
-    func addToFavourites(id: Int)
-    
+
     func showAlert(title: String, message: String)
     
     func setup(name: String, description: String, image: URL)
@@ -23,6 +21,8 @@ protocol GameDetailViewInterface: AnyObject {
 
 final class DetailVC: UIViewController {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     @IBOutlet weak var gameVisitWebsiteButton: UIButton!
     @IBOutlet weak var gameVisitRedditButton: UIButton!
     
@@ -62,8 +62,10 @@ final class DetailVC: UIViewController {
 }
 
 extension DetailVC: GameDetailViewInterface {
-    func addToFavourites(id: Int) {
-        
+    func hideIndicator() {
+        UIView.animate(withDuration: 0.3, delay: 0.5) {
+            self.activityIndicator.alpha = 0
+        }
     }
     
     func isWebsiteAvailable(_ state: Bool) {
@@ -91,13 +93,14 @@ extension DetailVC: GameDetailViewInterface {
             self.gameDescriptionValueLabel.text = description
             name.put(to: self.gameTitleLabel)
             
-            self.gameImageView.sd_imageIndicator = SDWebImageActivityIndicator.gray
             self.gameImageView.sd_setImage(with: image)
         }
     }
     
     func configure() {
         DispatchQueue.main.async {
+            self.hideIndicator()
+
             let favouriteButton = UIBarButtonItem(title: self.viewModel.getBarButtonTitle(), style: .plain, target: self, action: #selector(self.favoriteTapped))
             self.navigationItem.rightBarButtonItem = favouriteButton
             
