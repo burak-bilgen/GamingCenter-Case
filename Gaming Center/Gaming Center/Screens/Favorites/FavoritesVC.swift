@@ -41,8 +41,20 @@ extension FavoritesVC: FavoritesViewInterface {
         tableView.isHidden = true
     }
     
+    func hideEmptyView() {
+        emptyDataLabel.isHidden = true
+        tableView.isHidden = false
+    }
+    
     func configure() {
         tableView.register(UINib(nibName: Name.cellName, bundle: nil), forCellReuseIdentifier: Name.cellName)
+        
+        guard let list = viewModel.gameList else { return }
+        if list.count == 0 {
+            showEmptyView()
+        } else {
+            hideEmptyView()
+        }
     }
     
     func showAlert(title: String, message: String) {
@@ -51,9 +63,7 @@ extension FavoritesVC: FavoritesViewInterface {
 
     func reloadData() {
         DispatchQueue.main.async {
-            if let list = self.viewModel.gameList {
-                self.tableView.reloadData()
-            }
+            self.tableView.reloadData()
         }
     }
 }
@@ -84,5 +94,11 @@ extension FavoritesVC: TableView {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         CGFloat(Size.cellHeight)
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.removeCell(at: indexPath.row)
+        }
     }
 }
