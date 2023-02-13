@@ -24,6 +24,8 @@ This mobile application project was developed in just two days as an iOS develop
 
 - Build scheme for Development and Production
 
+- Light/Dark mode support
+
 # Requirements
 - iOS 11.0 or later
 
