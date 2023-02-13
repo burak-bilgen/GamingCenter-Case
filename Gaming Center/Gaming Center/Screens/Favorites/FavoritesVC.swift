@@ -98,7 +98,9 @@ extension FavoritesVC: TableView {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.removeCell(at: indexPath.row)
+            Alert.show(on: self, title: Headlines.caution, message: "Favourite game will be deleted, are you sure?", cancelButton: "Cancel") {
+                self.viewModel.removeCell(at: indexPath.row)
+            }
         }
     }
 }
