@@ -13,7 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        NetworkConfig.shared.setupNetworkConfig()
+        NetworkConfig.setupNetworkConfig()
         
         let window = UIWindow(frame: UIScreen.main.bounds)
         
@@ -26,7 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     private func createGamesNavigationController(preferLargeTitle: Bool = false) -> UINavigationController {
+        
         let gamesVC = UIStoryboard(name: Headlines.games, bundle: nil).instantiateViewController(withIdentifier: ViewController.gamesVC) as! GamesVC
+        
+        let viewModel = GamesViewModel(view: gamesVC)
+        gamesVC.viewModel = viewModel
         
         let sectionTitle = Headlines.games
         
@@ -42,6 +46,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     private func createFavoritesNavigationController(preferLargeTitle: Bool = false) -> UINavigationController {
         let favoritesVC = UIStoryboard(name: Headlines.favorites, bundle: nil).instantiateViewController(withIdentifier: ViewController.favoritesVC) as! FavoritesVC
+        
+        let viewModel = FavoritesViewModel(view: favoritesVC)
+        favoritesVC.viewModel = viewModel
 
         let sectionTitle = Headlines.favorites
         

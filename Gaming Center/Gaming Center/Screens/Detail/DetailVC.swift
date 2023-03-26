@@ -38,12 +38,12 @@ final class DetailVC: UIViewController {
     @IBOutlet weak var gameImageView: UIImageView!
     @IBOutlet weak var gameImageBaseView: UIView!
         
-    lazy var viewModel = GameDetailViewModel(view: self)
+    var viewModel: GameDetailViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.viewDidLoad()
+        viewModel?.viewDidLoad()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -53,11 +53,13 @@ final class DetailVC: UIViewController {
     }
 
     @IBAction func visitReddit(_ sender: UIButton) {
-        UIApplication.shared.open(viewModel.visitReddit())
+        guard let reddit = viewModel?.visitReddit() else { return }
+        UIApplication.shared.open(reddit)
     }
     
     @IBAction func visitWebsite(_ sender: UIButton) {
-        UIApplication.shared.open(viewModel.visitWebsite())
+        guard let website = viewModel?.visitWebsite() else { return }
+        UIApplication.shared.open(website)
     }
 }
 
@@ -101,7 +103,7 @@ extension DetailVC: GameDetailViewInterface {
         DispatchQueue.main.async {
             self.hideIndicator()
 
-            let favouriteButton = UIBarButtonItem(title: self.viewModel.getBarButtonTitle(), style: .plain, target: self, action: #selector(self.favoriteTapped))
+            let favouriteButton = UIBarButtonItem(title: self.viewModel?.getBarButtonTitle(), style: .plain, target: self, action: #selector(self.favoriteTapped))
             self.navigationItem.rightBarButtonItem = favouriteButton
             
             self.tabBarController?.tabBar.isHidden = true
@@ -110,7 +112,7 @@ extension DetailVC: GameDetailViewInterface {
     }
     
     @objc func favoriteTapped() {
-        viewModel.favoriteTapped()
+        viewModel?.favoriteTapped()
     }
     
     func showAlert(title: String, message: String) {

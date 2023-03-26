@@ -14,7 +14,7 @@ class NetworkService {
         var finalAddress = NetworkHelper.base_url
         finalAddress.append(query)
         
-        if let utm = NetworkConfig.shared.utm { finalAddress.append(Query.utm.rawValue + utm) }
+        if let utm = NetworkConfig.utm { finalAddress.append(Query.utm.rawValue + utm) }
         
         finalAddress.append(Query.key.rawValue + NetworkHelper.api_key)
         

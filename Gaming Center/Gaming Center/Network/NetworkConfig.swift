@@ -12,12 +12,10 @@ enum UrlConfig: String {
     case PROD = "GamingCenter_prod"
 }
 
-class NetworkConfig {
-    static let shared: NetworkConfig = NetworkConfig()
+class NetworkConfig {    
+    static var utm: String?
     
-    var utm: String?
-    
-    func setupNetworkConfig() {
+    static func setupNetworkConfig() {
         #if DEV
         utm = UrlConfig.DEV.rawValue
         #elseif PROD

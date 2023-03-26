@@ -42,6 +42,7 @@ class GameListCell: UITableViewCell {
         
         if let imgURL = URL(string: data.imageData) {
             gameImageView.sd_setImage(with: imgURL)
+            gameImageView.layer.cornerRadius = 6
         }
     }
 }

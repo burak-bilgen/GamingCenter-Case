@@ -15,9 +15,11 @@ protocol GamesViewInterface: AnyObject {
     func showAlert(title: String, message: String)
 }
 
-final class GamesVC: UIViewController {
+typealias ActionHandler = LoadingHandler
+
+final class GamesVC: UIViewController, ActionHandler {
     
-    private lazy var viewModel = GamesViewModel(view: self)
+    var viewModel: GamesViewModel?
     
     @IBOutlet weak var emptyDataLabel: UILabel!
         
@@ -27,28 +29,15 @@ final class GamesVC: UIViewController {
     @IBOutlet weak var scrollButton: UIButton!
         
     @IBOutlet weak var tableView: UITableView!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.viewDidLoad()
+        viewModel?.viewDidLoad()
     }
 }
 
 extension GamesVC: GamesViewInterface {
-    private func createTableViewSpinner() -> UIView {
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 100))
-        
-        let spinner = UIActivityIndicatorView()
-        spinner.center = footerView.center
-        
-        footerView.addSubview(spinner)
-        
-        spinner.startAnimating()
-        
-        return footerView
-    }
-    
     func scrollToTop() {
         DispatchQueue.main.async {
             self.tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
@@ -84,7 +73,7 @@ extension GamesVC: GamesViewInterface {
     
     @objc func textFieldTextChanged() {
         guard let text = searchField.text else { return }
-        viewModel.search(text: text)
+        viewModel?.search(text: text)
     }
     
     func showAlert(title: String, message: String) {
@@ -102,12 +91,12 @@ extension GamesVC: GamesViewInterface {
 
 extension GamesVC: TableView {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfRows()
+        viewModel?.numberOfRows() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Name.cellName, for: indexPath) as? GameListCell else { return UITableViewCell() }
-        guard let data = viewModel.dataForRow(at: indexPath.row) else { return UITableViewCell() }
+        guard let data = viewModel?.dataForRow(at: indexPath.row) else { return UITableViewCell() }
         
         cell.configure(with: data)
         
@@ -117,9 +106,12 @@ extension GamesVC: TableView {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detailView = UIStoryboard(name: Headlines.detail, bundle: nil).instantiateViewController(withIdentifier: ViewController.detailVC) as? DetailVC else { return }
         
-        guard let game = viewModel.gameList?[indexPath.row], let selectedID = game.id else { return }
-        detailView.viewModel.cellData = game
-        detailView.viewModel.id = selectedID
+        let detailViewModel = GameDetailViewModel(view: detailView)
+        detailView.viewModel = detailViewModel
+        
+        guard let game = viewModel?.gameList?[indexPath.row], let selectedID = game.id else { return }
+        detailView.viewModel?.cellData = game
+        detailView.viewModel?.id = selectedID
         
         navigationController?.show(detailView, sender: nil)
     }
@@ -138,16 +130,16 @@ extension GamesVC: TableView {
         }
         
         if position > (tableView.contentSize.height - 100 - scrollView.frame.size.height) {
-            guard !viewModel.isFetchingData else { return }
+            guard !(viewModel?.isFetchingData ?? false) else { return }
             
-            tableView.tableFooterView = createTableViewSpinner()
+            self.showLoading()
             
-            viewModel.increasePageCount()
+            viewModel?.increasePageCount()
             
             if searchField.text!.count > 0 {
                 textFieldTextChanged()
             } else {
-                viewModel.fetchGameList()
+                viewModel?.fetchGameList()
             }
         }
     }

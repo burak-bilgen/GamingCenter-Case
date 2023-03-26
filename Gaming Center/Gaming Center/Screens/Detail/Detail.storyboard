@@ -56,11 +56,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="956-Tl-123"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTN-rz-RfI">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sTN-rz-RfI">
                                 <rect key="frame" x="16" y="396" width="361" height="0.0"/>
                                 <attributedString key="attributedText"/>
                                 <nil key="highlightedColor"/>
@@ -78,7 +78,7 @@
                                                 <color key="tintColor" red="0.19137066599999999" green="0.19137066599999999" blue="0.19137066599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Visit reddit"/>
+                                                <state key="normal" title="Visit Reddit"/>
                                                 <connections>
                                                     <action selector="visitReddit:" destination="UEe-ul-kGD" eventType="touchUpInside" id="8Zg-xA-AmX"/>
                                                 </connections>
@@ -90,7 +90,7 @@
                                                 <color key="tintColor" red="0.19137066599999999" green="0.19137066599999999" blue="0.19137066599999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <inset key="titleEdgeInsets" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                <state key="normal" title="Visit website"/>
+                                                <state key="normal" title="Visit Website"/>
                                                 <connections>
                                                     <action selector="visitWebsite:" destination="UEe-ul-kGD" eventType="touchUpInside" id="tCQ-A0-EbT"/>
                                                 </connections>

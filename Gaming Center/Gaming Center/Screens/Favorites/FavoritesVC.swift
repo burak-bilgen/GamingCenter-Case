@@ -16,22 +16,22 @@ protocol FavoritesViewInterface: AnyObject {
 
 class FavoritesVC: UIViewController {
     
-    private lazy var viewModel = FavoritesViewModel(view: self)
-
     @IBOutlet weak var emptyDataLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
     
+    var viewModel: FavoritesViewModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        viewModel.viewDidLoad()
+        viewModel?.viewDidLoad()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        viewModel.viewWillAppear()
+        viewModel?.viewWillAppear()
     }
 }
 
@@ -49,7 +49,7 @@ extension FavoritesVC: FavoritesViewInterface {
     func configure() {
         tableView.register(UINib(nibName: Name.cellName, bundle: nil), forCellReuseIdentifier: Name.cellName)
         
-        guard let list = viewModel.gameList else { return }
+        guard let list = viewModel?.gameList else { return }
         if list.count == 0 {
             showEmptyView()
         } else {
@@ -70,12 +70,12 @@ extension FavoritesVC: FavoritesViewInterface {
 
 extension FavoritesVC: TableView {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.numberOfRows()
+        viewModel?.numberOfRows() ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: Name.cellName, for: indexPath) as? GameListCell else { return UITableViewCell() }
-        guard let data = viewModel.dataForRow(at: indexPath.row) else { return UITableViewCell() }
+        guard let data = viewModel?.dataForRow(at: indexPath.row) else { return UITableViewCell() }
         
         cell.configure(with: data)
         
@@ -85,9 +85,12 @@ extension FavoritesVC: TableView {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detailView = UIStoryboard(name: Headlines.detail, bundle: nil).instantiateViewController(withIdentifier: ViewController.detailVC) as? DetailVC else { return }
         
-        guard let game = viewModel.gameList?[indexPath.row], let selectedID = game.id else { return }
-        detailView.viewModel.cellData = game
-        detailView.viewModel.id = selectedID
+        let detailViewModel = GameDetailViewModel(view: detailView)
+        detailView.viewModel = detailViewModel
+        
+        guard let game = viewModel?.gameList?[indexPath.row], let selectedID = game.id else { return }
+        detailView.viewModel?.cellData = game
+        detailView.viewModel?.id = selectedID
         
         navigationController?.show(detailView, sender: nil)
     }
@@ -99,7 +102,7 @@ extension FavoritesVC: TableView {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             Alert.show(on: self, title: Headlines.caution, message: "Favourite game will be deleted, are you sure?", cancelButton: "Cancel") {
-                self.viewModel.removeCell(at: indexPath.row)
+                self.viewModel?.removeCell(at: indexPath.row)
             }
         }
     }
